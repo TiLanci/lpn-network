@@ -1,0 +1,31 @@
+{
+  "name": "lpn-network",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TiLanci/lpn-network.git"
+  },
+  "author": "TiLanci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TiLanci/lpn-network/issues"
+  },
+  "homepage": "https://github.com/TiLanci/lpn-network#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.9",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.6"
+  }
+}
