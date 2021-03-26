@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("assets/Fonts/fonts.scss");
+
+$blue : #00A8E8;
+$yellow : #FFBE55;
+$white : #FFFFFF;
+$gray : #4B4B4B;
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
