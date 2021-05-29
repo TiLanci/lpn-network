@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -13,6 +16,14 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { EnterpriseComponent } from './pages/enterprise/enterprise.component';
 import { SearchComponent } from './pages/search/search.component';
 import { UniversityComponent } from './pages/university/university.component';
+import { ResearchComponent } from './pages/research/research.component';
+import { PubCardComponent } from './components/pub-card/pub-card.component';
+import { NumberPipe } from './pipes/number.pipe';
+import { CompareDatePipe } from './pipes/compare-date.pipe';
+import { AddPubCardComponent } from './components/add-pub-card/add-pub-card.component';
+import { ToastComponent } from './components/behavior/toast/toast.component';
+import { ConfirmModelComponent } from './components/behavior/confirm-model/confirm-model.component';
+import { MaxTextPipe } from './pipes/max-text.pipe';
 
 @NgModule({
   declarations: [
@@ -26,11 +37,22 @@ import { UniversityComponent } from './pages/university/university.component';
     ProfileComponent,
     EnterpriseComponent,
     SearchComponent,
-    UniversityComponent
+    UniversityComponent,
+    ResearchComponent,
+    PubCardComponent,
+    NumberPipe,
+    CompareDatePipe,
+    AddPubCardComponent,
+    ToastComponent,
+    ConfirmModelComponent,
+    MaxTextPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

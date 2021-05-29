@@ -1,0 +1,83 @@
+.pub{
+  display: flex;
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 15px;
+  margin: 20px 5px;
+
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+
+  .rate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 5px;
+    color: #9E9E9E;
+    min-width: 50px;
+    #up-vote{
+      transition: all .25s ease-in-out;
+      transform: rotate(-90deg);
+      fill: #9E9E9E;
+      &:hover,
+      &.active{
+        fill: #00D100;
+      }
+    }
+    .num{
+      font-family: Montserrat;
+      color: #9E9E9E;
+    }
+    #down-vote{
+      transition: all .25s ease-in-out;
+      transform: rotate(90deg);
+      fill: #9E9E9E;
+      &:hover,
+      &.active{
+        fill: #D10000;
+      }
+    }
+  }
+
+  .content{
+    margin: 0 10px;
+    .upper-bond{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      .creator{
+        font-size: .75rem;
+        font-weight: bold;
+        line-height: 15px;
+      }
+      .date{
+        font-size: .6rem;
+        color: #9E9E9E;
+        right: 25px;
+        line-height: 15px;
+      }
+    }
+
+    .link{
+      font-size: .75rem;
+    }
+    .link:link {
+      color: #00A8E8;
+      text-decoration: none;
+      border-bottom: 1px solid;
+    }
+    .link:visited {
+        color: #0090ff;
+    }
+    .link:hover {
+        color: #00c6ff;
+        border-bottom: none;
+    }
+    .link:active {
+        color: #00A8E8;
+    }
+  }
+}
