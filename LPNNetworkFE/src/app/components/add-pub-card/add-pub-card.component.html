@@ -1,0 +1,9 @@
+<div class="card add-pub">
+  <div (input)=(changed($event)) role="textbox" class="new-post" name="new-post" id="new-post" contenteditable>
+  </div>
+  <div class="add-pub-footer">
+    <button (click)=(onSubmit()) class="publish">
+      Submit
+    </button>
+  </div>
+</div>

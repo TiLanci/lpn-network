@@ -12,15 +12,16 @@ const UserSchema = mongoose.Schema({
         match:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     },
     birthdate: {
-        type: Date, // YY-MM-DD
+        type: String, // DD/MM/YYYY
         required: true
     },
     pdp:{
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref : 'File',
         required: true
     },
     LPN_joindate: {
-        type: String,
+        type: String, // YYYY
         required: true
     },
     currentState:{
@@ -39,6 +40,11 @@ const UserSchema = mongoose.Schema({
         required: true
     },
     verif: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref : 'File',
+        required: true
+    },
+    about:{
         type: String,
         required: true
     },
@@ -52,7 +58,10 @@ const UserSchema = mongoose.Schema({
     },
     admin:{
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     }
+},{
+    timestamps:true
 });
 module.exports = mongoose.model("User", UserSchema);

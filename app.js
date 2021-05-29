@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const bodyParser = require('body-parser'); 
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 
@@ -22,10 +21,13 @@ mongoose.connect(
    
 app.use(morgan('dev'));
 
-app.use(bodyParser.urlencoded({extended : false}));
-app.use(bodyParser.json());
+app.use(express.urlencoded({extended : false}));
+app.use(express.json());
 
 const AllRoures= require('./api/routes'); 
 app.use('/api', AllRoures);
+
+app.use(express.static('public'));
+app.use('/uploads',express.static('uploads'));
 
 module.exports = app;

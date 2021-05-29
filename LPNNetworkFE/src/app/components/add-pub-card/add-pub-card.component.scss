@@ -1,0 +1,85 @@
+.add-pub{
+  position: relative;
+  overflow: hidden;
+
+  padding: 15px;
+  margin: 20px 5px;
+
+  border-radius: 20px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+
+  .new-post{
+    width: 100%;
+
+    min-height: 2rem;
+    max-height: 10rem;
+
+    font-size: 1rem;
+
+    position: relative;
+
+    border-radius: 1rem;
+
+    background-color: #F2F2F2;
+    color: #808080;
+    border: none;
+    padding: .5rem 1rem;
+    outline: none;
+    overflow: scroll;
+
+    span.tag{
+      background: #00a8e870;
+      border-radius: 2.5px;
+      color: #fafafadd;
+      padding: 0 5px;
+      &:hover{
+        background: #00a8e8ff;
+        color: #fafafa;
+      }
+    }
+
+    div{
+      color: #808080;
+    }
+
+
+    &:empty::before{
+      content: "Express Yourself";
+      position: absolute;
+      color: #7A7A7A;
+    }
+
+
+  }
+
+  .add-pub-footer{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    .publish{
+      background-color: #00A8E8;
+      color: white;
+      font-size: .75rem;
+      font-family: Montserrat;
+
+      padding: .25rem 1rem;
+      border-radius: 1rem;
+      border: transparent solid 2px;
+
+      &:hover,
+      &:active {
+        border: black solid 2px;
+        color: black;
+        background-color: transparent;
+      }
+
+      &:focus {
+        outline: none;
+      }
+      &:active{
+        transform: translate(.5px,.25px);
+      }
+    }
+  }
+
+}

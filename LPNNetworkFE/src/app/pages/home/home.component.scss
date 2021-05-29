@@ -1,0 +1,231 @@
+.main{
+  width: 100vw;
+  height: 92.5vh;
+
+  background: url("../../../assets/img/LPN.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 10% 2.5%;
+
+  div.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1.title{
+      margin: 0;
+      color: #00A8E8;
+      font-family: BebasNeue;
+      font-size: 5rem;
+      line-height: 5rem;
+    }
+
+    h2.title{
+      color: white;
+      margin-left: 0;
+      font-size: 2.25rem;
+      line-height: 2.25rem;
+      font-weight: bold;
+    }
+  }
+
+  p.description{
+    color: white;
+    margin-left: 0;
+    font-size: 1rem;
+
+    margin-top: 5%;
+
+    text-align: center;
+  }
+
+  .btn-grp{
+    display: flex;
+    flex-direction: column;
+
+    a{
+      text-decoration: none;
+      background-color: white;
+      color: black;
+      font-size: 1rem;
+      font-family: Montserrat;
+      padding: .5rem 2rem;
+      border-radius: 1.5rem;
+      border: transparent solid 2px;
+
+      margin: .5rem;
+
+      &.sign-in{
+        background-color: #00A8E8;
+        color: white;
+      }
+
+      &:hover {
+        border: white solid 2px;
+        color: white;
+        background-color: transparent;
+      }
+
+      &:focus {
+        outline: none;
+      }
+      &:active{
+        border: white solid 2px;
+        color: white;
+        background-color: transparent;
+      }
+    }
+
+
+  }
+
+
+  @media screen and (min-width : 992px){
+    justify-content: space-between;
+    div.title{
+      h1.title{
+        font-size: 8rem;
+        line-height: 8rem;
+      }
+
+      h2.title{
+        font-size: 3.25rem;
+        line-height: 3.25rem;
+      }
+    }
+    p.description{
+      font-size: 1.25rem;
+    }
+  }
+  @media screen and (min-width : 1400px){
+    div.title{
+      h1.title{
+        font-size: 10rem;
+        line-height: 10rem;
+      }
+
+      h2.title{
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+      }
+    }
+    p.description{
+      font-size: 1.5rem;
+    }
+
+    .btn-grp{
+      a{
+        font-size: 1.5rem;
+        padding: .5rem 3.5rem;
+        border-radius: 2.5rem;
+      }
+    }
+  }
+}
+
+section.basic{
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  padding: 2rem;
+
+  .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80vw;
+
+    h1.title{
+      margin-left: 0;
+      margin-bottom: 1rem;
+      margin-left: .5rem;
+      text-indent: .75rem;
+    }
+    p.description{
+      text-indent: .5rem;
+    }
+  }
+   img{
+    width: 250px;
+  }
+
+
+  @media screen and (min-width : 576px){
+
+    img{
+      width: 360px;
+    }
+
+    .content{
+
+      h1.title{
+        font-size: 1.75rem;
+      }
+      p.description{
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+
+  @media screen and (min-width : 768px){
+    flex-direction: row;
+    justify-content: space-around;
+
+    .content{
+      width: 45vw;
+    }
+
+  }
+
+  @media screen and (min-width : 992px){
+
+    img{
+      width: 520px;
+    }
+
+    .content{
+      h1.title{
+        font-size: 2.25rem;
+        margin-bottom: 2rem;
+        text-indent: 2rem;
+      }
+      p.description{
+        font-size: 1.25rem;
+        text-indent: 1rem;
+      }
+    }
+  }
+
+  @media screen and (min-width : 1400px){
+    img{
+      width: 680px;
+    }
+
+    .content{
+
+      h1.title{
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+        text-indent: 2rem;
+      }
+      p.description{
+        font-size: 1.75rem;
+        text-indent: 1.5rem;
+      }
+    }
+  }
+}
+

@@ -1,1 +1,104 @@
-<p>sign-up works!</p>
+<div class="wrapper">
+  <h1 class="title">Sign Up</h1>
+  <form class="sign-up-form">
+    <div class="page page-1">
+      <div class="step-1">
+        <div class="input-group">
+          <img src="assets/svg/search-icon.svg" class="icon">
+          <input id="f-name" name="f-name" class="input-field" type="text" required autocomplete="off">
+          <label class="label" for="f-name">First Name</label>
+        </div>
+        <div class="input-group">
+          <img src="assets/svg/search-icon.svg" class="icon">
+          <input id="l-name" name="l-name" class="input-field" type="text" required autocomplete="off">
+          <label class="label" for="l-name">Last Name</label>
+        </div>
+        <div class="input-group">
+          <img src="assets/svg/search-icon.svg" class="icon">
+          <input id="email" name="email" class="input-field" type="text" required autocomplete="off">
+          <label class="label" for="email">email</label>
+        </div>
+        <div class="input-group">
+          <img src="assets/svg/search-icon.svg" class="icon">
+          <input id="ph-num" name="ph-num" class="input-field" type="text" required autocomplete="off">
+          <label class="label" for="ph-num">phone number</label>
+        </div>
+        <div class="input-group">
+          <img src="assets/svg/search-icon.svg" class="icon">
+          <input id="pass" name="pass" class="input-field" type="text" required autocomplete="off">
+          <label class="label" for="pass">Password</label>
+        </div>
+        <div class="input-group">
+          <img src="assets/svg/search-icon.svg" class="icon">
+          <input id="confpass" name="confpass" class="input-field" type="text" required autocomplete="off">
+          <label class="label" for="confpass">Confirm password</label>
+        </div>
+        <div class="terms-input">
+          <input id="terms" name="terms" type="checkbox">
+          <label for="terms">I have read and accepted <a class="link" routerLink="/home">The terms and
+              conditions</a></label>
+        </div>
+      </div>
+      <div class="step-1">
+        <div class="input-group">
+          <img src="assets/svg/search-icon.svg" class="icon">
+          <input id="f-name" name="f-name" class="input-field" type="text" required autocomplete="off">
+          <label class="label" for="f-name">First Name</label>
+        </div>
+        <div class="input-group">
+          <img src="assets/svg/search-icon.svg" class="icon">
+          <input id="l-name" name="l-name" class="input-field" type="text" required autocomplete="off">
+          <label class="label" for="l-name">Last Name</label>
+        </div>
+        <div class="input-group">
+          <img src="assets/svg/search-icon.svg" class="icon">
+          <input id="email" name="email" class="input-field" type="text" required autocomplete="off">
+          <label class="label" for="email">email</label>
+        </div>
+        <div class="input-group">
+          <img src="assets/svg/search-icon.svg" class="icon">
+          <input id="ph-num" name="ph-num" class="input-field" type="text" required autocomplete="off">
+          <label class="label" for="ph-num">phone number</label>
+        </div>
+        <div class="input-group">
+          <img src="assets/svg/search-icon.svg" class="icon">
+          <input id="pass" name="pass" class="input-field" type="text" required autocomplete="off">
+          <label class="label" for="pass">Password</label>
+        </div>
+        <div class="input-group">
+          <img src="assets/svg/search-icon.svg" class="icon">
+          <input id="confpass" name="confpass" class="input-field" type="text" required autocomplete="off">
+          <label class="label" for="confpass">Confirm password</label>
+        </div>
+        <div class="terms-input">
+          <input id="terms" name="terms" type="checkbox">
+          <label for="terms">I have read and accepted <a class="link" routerLink="/home">The terms and
+              conditions</a></label>
+        </div>
+      </div>
+
+    </div>
+    <div class="page page-2">
+      <div class="pdp-img">
+        <img alt="Your Image Goes Here" [src]="imgURL">
+        <label for="img-upload">Add your Image</label>
+        <input #file (change)=(readURL(file.files,$event)) type="file" name="filename" id="img-upload"
+          accept="image/gif, image/jpeg, image/png">
+        <button class="del-btn" (click)=(delImg())>Delete image</button>
+      </div>
+
+      <div class="verif-img">
+        <label for="verif-upload">Add a verification Image</label>
+        <input #file type="file" name="filename" id="verif-upload" accept="image/gif, image/jpeg, image/png">
+        <button class="del-btn" (click)=(delImg())>Delete image</button>
+      </div>
+
+    </div>
+
+  </form>
+  <div class="btn-grp">
+    <button (click)=(onNext()) *ngIf="page == 1" class="next">Next</button>
+    <button (click)=(onPrevious()) *ngIf="page == 2" class="previous">Previous</button>
+    <button *ngIf="page == 2" class="subbmit">Subbmit</button>
+  </div>
+</div>

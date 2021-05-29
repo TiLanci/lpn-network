@@ -1,0 +1,8 @@
+<div
+*ngFor="let toast of Toasts"
+[id]=toast.id
+class="toast"
+[class]=toast.type
+>
+    <span>{{toast.message | maxText : 20}}</span>
+</div>

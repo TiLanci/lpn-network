@@ -2,12 +2,12 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user.model')
 
 module.exports = (req, res, next) => {
-    if (req.headers.authorization.split(" ")[1]){
+    if (req.headers.authorization){
         try {
             const token = req.headers.authorization.split(" ")[1];
             const decoded = jwt.verify(token, process.env.JWT_ADMIN_AUTH);
             User
-            .findById({'_id':ecoded.userId, 'admin':true})
+            .findById({'_id':decoded.userId, 'admin':true})
             .exec()
             .then((user)=>{
                 // finally an admin
