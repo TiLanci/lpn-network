@@ -1,4 +1,4 @@
-.pub{
+.pub {
   display: flex;
 
   position: relative;
@@ -10,74 +10,82 @@
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
 
-  .rate{
+  .rate {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0px 5px;
-    color: #9E9E9E;
+    color: #9e9e9e;
     min-width: 50px;
-    #up-vote{
-      transition: all .25s ease-in-out;
+    #up-vote {
+      transition: all 0.25s ease-in-out;
       transform: rotate(-90deg);
-      fill: #9E9E9E;
+      fill: #9e9e9e;
       &:hover,
-      &.active{
-        fill: #00D100;
+      &.active {
+        fill: #00d100;
       }
     }
-    .num{
+    .num {
       font-family: Montserrat;
-      color: #9E9E9E;
+      color: #9e9e9e;
     }
-    #down-vote{
-      transition: all .25s ease-in-out;
+    #down-vote {
+      transition: all 0.25s ease-in-out;
       transform: rotate(90deg);
-      fill: #9E9E9E;
+      fill: #9e9e9e;
       &:hover,
-      &.active{
-        fill: #D10000;
+      &.active {
+        fill: #d10000;
       }
     }
   }
 
-  .content{
+  .content {
     margin: 0 10px;
-    .upper-bond{
+    width: 100%;
+    .upper-bond {
       display: flex;
       justify-content: space-between;
       margin-bottom: 5px;
-      .creator{
-        font-size: .75rem;
+      .creator {
+        font-size: 0.75rem;
         font-weight: bold;
-        line-height: 15px;
+        line-height: 1rem;
       }
-      .date{
-        font-size: .6rem;
-        color: #9E9E9E;
+      .stars {
+        font-size: 0.7rem;
+        font-weight: bold;
+        color: #9e9e9e;
+        line-height: 1rem;
+        margin-left: 0.5rem;
+      }
+      .date {
+        font-size: 0.6rem;
+        color: #9e9e9e;
         right: 25px;
-        line-height: 15px;
+        line-height: 1rem;
       }
     }
 
-    .link{
-      font-size: .75rem;
+    .link {
+      font-size: 0.75rem;
     }
     .link:link {
-      color: #00A8E8;
+      color: #00a8e8;
       text-decoration: none;
       border-bottom: 1px solid;
     }
     .link:visited {
-        color: #0090ff;
+      color: #0090ff;
     }
     .link:hover {
-        color: #00c6ff;
-        border-bottom: none;
+      color: #00c6ff;
+      border-bottom: none;
     }
     .link:active {
-        color: #00A8E8;
+      color: #00a8e8;
     }
   }
 }

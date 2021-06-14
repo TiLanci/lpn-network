@@ -1,4 +1,4 @@
-.add-pub{
+.add-pub {
   position: relative;
   overflow: hidden;
 
@@ -8,7 +8,7 @@
   border-radius: 20px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
 
-  .new-post{
+  .new-post {
     width: 100%;
 
     min-height: 2rem;
@@ -20,49 +20,112 @@
 
     border-radius: 1rem;
 
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     color: #808080;
     border: none;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     outline: none;
     overflow: scroll;
 
-    span.tag{
+    span.tag {
       background: #00a8e870;
       border-radius: 2.5px;
       color: #fafafadd;
       padding: 0 5px;
-      &:hover{
+      &:hover {
         background: #00a8e8ff;
         color: #fafafa;
       }
     }
 
-    div{
+    div {
       color: #808080;
     }
 
-
-    &:empty::before{
+    &:empty::before {
       content: "Express Yourself";
       position: absolute;
-      color: #7A7A7A;
+      color: #7a7a7a;
     }
-
-
   }
 
-  .add-pub-footer{
+  .add-pub-footer {
     display: flex;
-    justify-content: flex-end;
+
     margin-top: 10px;
-    .publish{
-      background-color: #00A8E8;
+    .overall {
+      display: flex;
+      align-items: center;
+      .title {
+        line-height: 2rem;
+        font-family: "Montserrat";
+        margin: 0 5px;
+      }
+      .rate {
+        display: flex;
+        flex-direction: row-reverse;
+
+        .star {
+          appearance: unset;
+          width: 1rem;
+          height: 1rem;
+          margin: 0.1rem;
+          background: url("../../../assets/svg/star.svg");
+          background-size: 1rem 1rem;
+          appearance: unset;
+          outline: none;
+
+          &:checked {
+            background: url("../../../assets/svg/star-3.svg");
+            background-size: 1rem 1rem;
+            ~ :nth-child(n):nth-child(-n + 5) {
+              background: url("../../../assets/svg/star-3.svg");
+              background-size: 1rem 1rem;
+              &:hover {
+                background: url("../../../assets/svg/star-2.svg");
+                background-size: 1rem 1rem;
+                ~ :nth-child(n):nth-child(-n + 5) {
+                  background: url("../../../assets/svg/star-2.svg");
+                  background-size: 1rem 1rem;
+                }
+              }
+            }
+          }
+
+          &:hover {
+            background: url("../../../assets/svg/star-1.svg");
+            background-size: 1rem 1rem;
+            &:checked {
+              background: url("../../../assets/svg/star-2.svg");
+              background-size: 1rem 1rem;
+              ~ :nth-child(n):nth-child(-n + 5) {
+                background: url("../../../assets/svg/star-2.svg");
+                background-size: 1rem 1rem;
+              }
+            }
+            ~ :nth-child(n):nth-child(-n + 5) {
+              background: url("../../../assets/svg/star-1.svg");
+              background-size: 1rem 1rem;
+              &:checked {
+                background: url("../../../assets/svg/star-2.svg");
+                background-size: 1rem 1rem;
+                ~ :nth-child(n):nth-child(-n + 5) {
+                  background: url("../../../assets/svg/star-2.svg");
+                  background-size: 1rem 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .publish {
+      background-color: #00a8e8;
       color: white;
-      font-size: .75rem;
+      font-size: 0.75rem;
       font-family: Montserrat;
 
-      padding: .25rem 1rem;
+      padding: 0.25rem 1rem;
       border-radius: 1rem;
       border: transparent solid 2px;
 
@@ -76,10 +139,9 @@
       &:focus {
         outline: none;
       }
-      &:active{
-        transform: translate(.5px,.25px);
+      &:active {
+        transform: translate(0.5px, 0.25px);
       }
     }
   }
-
 }

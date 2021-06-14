@@ -6,14 +6,16 @@
       <div class="card-content">
         <h1 class="title">Ahmed Bh</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem esse facilis blanditiis aperiam error. Illum voluptas magnam sit ab! Facere obcaecati, quam consectetur impedit saepe corrupti tempora architecto sint itaque.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem esse facilis blanditiis aperiam error. Illum
+          voluptas magnam sit ab! Facere obcaecati, quam consectetur impedit saepe corrupti tempora architecto sint
+          itaque.
         </p>
       </div>
       <a routerLink="/profile/me" class="profile-link">Profile</a>
     </div>
   </div>
   <div id="favs" class="card favs">
-    <h1 class="title">Favorites: </h1>
+    <h1 class="title">Trending: </h1>
     <div class="content">
       <span class="tag">#LPN</span>
       <span class="tag">#dev</span>
@@ -24,7 +26,7 @@
   </div>
   <div id="form">
     <h1 class="title">New Post: </h1>
-    <app-add-pub-card></app-add-pub-card>
+    <app-add-pub-card (Submit)=this.posts.push($event)></app-add-pub-card>
     <h1 class="title">Publications: </h1>
     <app-pub-card [post]="post" *ngFor="let post of posts"></app-pub-card>
   </div>
@@ -32,30 +34,22 @@
     <h1 class="title">Research: </h1>
     <div class="input-container">
       <img src="assets/svg/search-icon.svg" class="icon">
-      <input class="input-field" type="text" placeholder="Looking for something?">
+      <input [(ngModel)]="searchTerm" name="search" class="input-field" type="text" placeholder="Looking for something?"
+        autocomplete="off">
     </div>
     <div class="search-results">
-      <div class="search-result card">
-        <img src="assets/img/logo.png">
+      <div *ngFor="let univ of universities" routerLink="/university/{{univ._id}}" [id]=univ._id
+        class="search-result card">
+        <img src="{{univ.logo}}">
         <div class="content">
-          <span class="title">Institut National des Science Applicable et de Technologie  INSAT</span>
+          <span class="title">{{univ.name}}</span>
           <div class="location">
             <svg width="20" height="31" viewBox="0 0 20 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 0C10.9167 0 11.8021 0.116048 12.6562 0.348145C13.5104 0.580241 14.3073 0.903158 15.0469 1.31689C15.7865 1.73063 16.4583 2.23519 17.0625 2.83057C17.6667 3.42594 18.1875 4.08187 18.625 4.79834C19.0625 5.51481 19.401 6.28678 19.6406 7.11426C19.8802 7.94173 20 8.79948 20 9.6875C20 10.3838 19.9167 11.0448 19.75 11.6704C19.5833 12.2961 19.3333 12.9268 19 13.5625L10 31L1 13.5625C0.677083 12.9368 0.432292 12.3112 0.265625 11.6855C0.0989583 11.0599 0.0104167 10.3939 0 9.6875C0 8.79948 0.119792 7.94173 0.359375 7.11426C0.598958 6.28678 0.932292 5.51481 1.35938 4.79834C1.78646 4.08187 2.30729 3.43099 2.92188 2.8457C3.53646 2.26042 4.21354 1.75586 4.95312 1.33203C5.69271 0.908203 6.48958 0.580241 7.34375 0.348145C8.19792 0.116048 9.08333 0 10 0ZM10 13.5625C10.5521 13.5625 11.0677 13.4616 11.5469 13.2598C12.026 13.0579 12.4531 12.7804 12.8281 12.4272C13.2031 12.0741 13.4896 11.6654 13.6875 11.2012C13.8854 10.737 13.9896 10.2324 14 9.6875C14 9.15267 13.8958 8.65316 13.6875 8.18896C13.4792 7.72477 13.1927 7.31104 12.8281 6.94775C12.4635 6.58447 12.0417 6.30697 11.5625 6.11523C11.0833 5.9235 10.5625 5.82259 10 5.8125C9.44792 5.8125 8.93229 5.91341 8.45312 6.11523C7.97396 6.31706 7.54688 6.59456 7.17188 6.94775C6.79688 7.30094 6.51042 7.70964 6.3125 8.17383C6.11458 8.63802 6.01042 9.14258 6 9.6875C6 10.2223 6.10417 10.7218 6.3125 11.186C6.52083 11.6502 6.80729 12.064 7.17188 12.4272C7.53646 12.7905 7.95833 13.068 8.4375 13.2598C8.91667 13.4515 9.4375 13.5524 10 13.5625Z" fill="white"/>
+              <path
+                d="M10 0C10.9167 0 11.8021 0.116048 12.6562 0.348145C13.5104 0.580241 14.3073 0.903158 15.0469 1.31689C15.7865 1.73063 16.4583 2.23519 17.0625 2.83057C17.6667 3.42594 18.1875 4.08187 18.625 4.79834C19.0625 5.51481 19.401 6.28678 19.6406 7.11426C19.8802 7.94173 20 8.79948 20 9.6875C20 10.3838 19.9167 11.0448 19.75 11.6704C19.5833 12.2961 19.3333 12.9268 19 13.5625L10 31L1 13.5625C0.677083 12.9368 0.432292 12.3112 0.265625 11.6855C0.0989583 11.0599 0.0104167 10.3939 0 9.6875C0 8.79948 0.119792 7.94173 0.359375 7.11426C0.598958 6.28678 0.932292 5.51481 1.35938 4.79834C1.78646 4.08187 2.30729 3.43099 2.92188 2.8457C3.53646 2.26042 4.21354 1.75586 4.95312 1.33203C5.69271 0.908203 6.48958 0.580241 7.34375 0.348145C8.19792 0.116048 9.08333 0 10 0ZM10 13.5625C10.5521 13.5625 11.0677 13.4616 11.5469 13.2598C12.026 13.0579 12.4531 12.7804 12.8281 12.4272C13.2031 12.0741 13.4896 11.6654 13.6875 11.2012C13.8854 10.737 13.9896 10.2324 14 9.6875C14 9.15267 13.8958 8.65316 13.6875 8.18896C13.4792 7.72477 13.1927 7.31104 12.8281 6.94775C12.4635 6.58447 12.0417 6.30697 11.5625 6.11523C11.0833 5.9235 10.5625 5.82259 10 5.8125C9.44792 5.8125 8.93229 5.91341 8.45312 6.11523C7.97396 6.31706 7.54688 6.59456 7.17188 6.94775C6.79688 7.30094 6.51042 7.70964 6.3125 8.17383C6.11458 8.63802 6.01042 9.14258 6 9.6875C6 10.2223 6.10417 10.7218 6.3125 11.186C6.52083 11.6502 6.80729 12.064 7.17188 12.4272C7.53646 12.7905 7.95833 13.068 8.4375 13.2598C8.91667 13.4515 9.4375 13.5524 10 13.5625Z"
+                fill="white" />
             </svg>
-            <h3 class="title">Tunis, Tunisia</h3>
-          </div>
-        </div>
-      </div>
-      <div class="search-result card">
-        <img src="assets/img/logo.png">
-        <div class="content">
-          <span class="title">Institut National des Science Applicable et de Technologie  INSAT</span>
-          <div class="location">
-            <svg width="20" height="31" viewBox="0 0 20 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 0C10.9167 0 11.8021 0.116048 12.6562 0.348145C13.5104 0.580241 14.3073 0.903158 15.0469 1.31689C15.7865 1.73063 16.4583 2.23519 17.0625 2.83057C17.6667 3.42594 18.1875 4.08187 18.625 4.79834C19.0625 5.51481 19.401 6.28678 19.6406 7.11426C19.8802 7.94173 20 8.79948 20 9.6875C20 10.3838 19.9167 11.0448 19.75 11.6704C19.5833 12.2961 19.3333 12.9268 19 13.5625L10 31L1 13.5625C0.677083 12.9368 0.432292 12.3112 0.265625 11.6855C0.0989583 11.0599 0.0104167 10.3939 0 9.6875C0 8.79948 0.119792 7.94173 0.359375 7.11426C0.598958 6.28678 0.932292 5.51481 1.35938 4.79834C1.78646 4.08187 2.30729 3.43099 2.92188 2.8457C3.53646 2.26042 4.21354 1.75586 4.95312 1.33203C5.69271 0.908203 6.48958 0.580241 7.34375 0.348145C8.19792 0.116048 9.08333 0 10 0ZM10 13.5625C10.5521 13.5625 11.0677 13.4616 11.5469 13.2598C12.026 13.0579 12.4531 12.7804 12.8281 12.4272C13.2031 12.0741 13.4896 11.6654 13.6875 11.2012C13.8854 10.737 13.9896 10.2324 14 9.6875C14 9.15267 13.8958 8.65316 13.6875 8.18896C13.4792 7.72477 13.1927 7.31104 12.8281 6.94775C12.4635 6.58447 12.0417 6.30697 11.5625 6.11523C11.0833 5.9235 10.5625 5.82259 10 5.8125C9.44792 5.8125 8.93229 5.91341 8.45312 6.11523C7.97396 6.31706 7.54688 6.59456 7.17188 6.94775C6.79688 7.30094 6.51042 7.70964 6.3125 8.17383C6.11458 8.63802 6.01042 9.14258 6 9.6875C6 10.2223 6.10417 10.7218 6.3125 11.186C6.52083 11.6502 6.80729 12.064 7.17188 12.4272C7.53646 12.7905 7.95833 13.068 8.4375 13.2598C8.91667 13.4515 9.4375 13.5524 10 13.5625Z" fill="white"/>
-            </svg>
-            <h3 class="title">Tunis, Tunisia</h3>
+            <h3 class="title">{{univ.localisation}}</h3>
           </div>
         </div>
       </div>
@@ -64,37 +58,17 @@
   <div id="suggestions">
     <h1 class="title">Suggestions: </h1>
     <div class="suggestions">
-      <div class="card profile">
+      <div *ngFor="let suggestion of this.suggestions" [id]=suggestion._id class="card profile">
         <div class="card-upper">
-          <img class="profile-img" src="assets/img/avatar.png">
+          <img class="profile-img" [src]=suggestion.pdp>
         </div>
         <div class="card-footer">
           <div class="card-content">
-            <h1 class="title">Ahmed Bh</h1>
+            <h1 class="title">{{suggestion.username}}</h1>
           </div>
-          <a routerLink="/profile" class="profile-link">Profile</a>
-        </div>
-      </div>
-      <div class="card profile">
-        <div class="card-upper">
-          <img class="profile-img" src="assets/img/avatar.png">
-        </div>
-        <div class="card-footer">
-          <div class="card-content">
-            <h1 class="title">Ahmed Bh</h1>
-          </div>
-          <a routerLink="/profile" class="profile-link">Profile</a>
-        </div>
-      </div>
-      <div class="card profile">
-        <div class="card-upper">
-          <img class="profile-img" src="assets/img/avatar.png">
-        </div>
-        <div class="card-footer">
-          <div class="card-content">
-            <h1 class="title">Ahmed Bh</h1>
-          </div>
-          <a routerLink="/profile" class="profile-link">Profile</a>
+          <button (mouseout)=onMouseOutFollow($event,suggestion._id)
+            (mouseover)=onMouseOverFollow($event,suggestion._id) (click)=onFollow($event,suggestion._id)
+            class="follow">{{suggestion.following}}</button>
         </div>
       </div>
     </div>

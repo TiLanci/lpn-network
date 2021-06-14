@@ -3,16 +3,18 @@
     <h1 class="title">Log In</h1>
     <div class="input-group">
       <img src="assets/svg/search-icon.svg" class="icon">
-      <input id="email" name="email" class="input-field" type="text" required autocomplete="off">
+      <input (input)="change($event)" id="email" name="email" class="input-field" type="text" required
+        autocomplete="off">
       <label class="label" for="email">Email</label>
     </div>
     <div class="input-group">
       <img src="assets/svg/search-icon.svg" class="icon">
-      <input id="pass" name="pass" class="input-field" type="text" required autocomplete="off">
+      <input (input)="change($event)" id="pass" name="pass" class="input-field" type="password" required
+        autocomplete="off">
       <label class="label" for="pass">Password</label>
     </div>
     <div class="btn-grp">
-      <button class="subbmit">LogIn</button>
+      <button [disabled]="!this.user.valid" (click)=(logIn()) class="subbmit">LogIn</button>
     </div>
   </form>
 </div>

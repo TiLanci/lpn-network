@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewEncapsulation, Input } from '@angular/core';
+import { ToastService } from 'src/app/components/behavior/toast/toast.service';
+import { Toaster } from 'src/app/models/toaster';
 
 @Component({
   selector: 'app-add-pub-card',
@@ -8,70 +10,73 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class AddPubCardComponent implements OnInit {
 
+  @Output() Submit = new EventEmitter();
+  @Input() rate: boolean;
+
   maxChars = 5;
   canwrite = true;
+  stars = undefined;
 
-  constructor() {
+  constructor(private _toastService: ToastService) {
   }
 
   ngOnInit(): void {
-    // let selection;
-    // document.onselectionchange = function() {
-    //   console.log('New selection made');
-    //   selection = document.getSelection();
-    //   console.log(selection);
-    // };
+
   }
 
-  changed(event){
-    let target = event.target;
-    let HTMLtext = target.innerText;
-    // let preanchorOffset =  document.getSelection().anchorOffset
-    // let preanchorNode =  document.getSelection().anchorNode
-    // let innerHTML=``
-    // HTMLtext.split("#").join(" #").split(' ').forEach(element=>{
-    //   if(element[0] == "#"){
-    //     innerHTML+='<span class="tag">' + element + '</span>';
-    //     let newNode = document.createElement('span');
-    //     newNode.className = 'tag';
-    //   } else{
-    //     innerHTML+= " "+element+" "
-    //   }
+  onChange(e, obj) {
+    if (obj == 'text') {
+      let target = e.target;
+      let HTMLtext = target.innerText;
 
-    // })
-    // target.innerHTML = innerHTML
-    // var range,selection;
-    // if(document.createRange)//Firefox, Chrome, Opera, Safari, IE 9+
-    // {
-    //     selection = document.getSelection();
-    //     selection.removeAllRanges();
-    //     selection.collapse(target.childNodes[0],preanchorOffset)
-    // }
-
-
-    if(HTMLtext.length>this.maxChars){
-      event.preventDefault()
+      if (HTMLtext.length > this.maxChars) {
+        e.preventDefault()
+      }
+    } else {
+      this.stars = e.target.value;
     }
-    console.log(event)
-
   }
 
-  onSubmit(){
+  onSubmit() {
     let target = document.getElementById('new-post');
     let HTMLtext = target.innerText;
-    let Tags=[]
-
-    HTMLtext.split("#").join(" #").split(' ').forEach(element=>{
-      if(element[0] == "#"){
-        Tags.push(element)
+    console.log(this.stars && HTMLtext.length > 0)
+    if ((HTMLtext.length > 0 && !this.rate) || (HTMLtext.length > 0 && this.stars > 0)) {
+      this.Submit.emit({
+        _id: "great_id",
+        rate: parseInt(this.stars),
+        total_votes: 0,
+        content: HTMLtext,
+        _user: {
+          _id: "poster_id",
+          username: "great User"
+        },
+        user_vote: undefined,
+        createdAt: new Date()
+      });
+      let toast: Toaster = {
+        id: '_' + Date.now().toString(),
+        message: "Post added successfully",
+        type: "success",
+        duration: 1,
       }
-    })
-
-    let newPost = {
-      content: document.getElementById('new-post').innerHTML,
-      Tags:Tags
+      this._toastService.Add(toast)
+      target.innerText = "";
+    } else {
+      let toast: Toaster = {
+        id: '_' + Date.now().toString(),
+        message: "Can not add empty post",
+        type: "error",
+        duration: 1,
+      }
+      this._toastService.Add(toast)
     }
-    console.log(newPost)
+
+    // HTMLtext.split("#").join(" #").split(' ').forEach(element=>{
+    //   if(element[0] == "#"){
+    //     Tags.push(element)
+    //   }
+    // })
   }
 
 }

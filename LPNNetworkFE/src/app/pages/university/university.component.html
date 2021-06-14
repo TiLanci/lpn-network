@@ -3,7 +3,7 @@
     <div class="description">
       <img src="assets/img/logo.png">
       <div class="content">
-        <h1 class="title">Institut National des Science Applicable et de Technologie  INSAT</h1>
+        <h1 class="title">Institut National des Science Applicable et de Technologie INSAT</h1>
         <div class="location">
           <img src="assets/svg/location.svg">
           <h3 class="title">Tunis, Tunisia</h3>
@@ -13,28 +13,15 @@
     <div class="rating">
       <div class="title">Rates: </div>
       <div class="rate">
-        <div class="num">4.6</div>
+        <div class="num">{{rates.total | number:'1.1-1'}}</div>
         <div class="stats">
-          <div class="stat">
-            <div class="tag">5</div>
-            <div class="bar"></div>
+          <div class="stat" *ngFor="let stat of rates.stats">
+            <div class="tag">{{stat.id}}</div>
+            <div class="bar-container">
+              <div class="bar" [style.width.%]=[stat.percentage]></div>
+            </div>
           </div>
-          <div class="stat">
-            <div class="tag">4</div>
-            <div class="bar"></div>
-          </div>
-          <div class="stat">
-            <div class="tag">3</div>
-            <div class="bar"></div>
-          </div>
-          <div class="stat">
-            <div class="tag">2</div>
-            <div class="bar"></div>
-          </div>
-          <div class="stat">
-            <div class="tag">1</div>
-            <div class="bar"></div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -43,117 +30,24 @@
     <div class="about">
       <h1>About: </h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem assumenda tenetur asperiores. Non, voluptates minus aliquid est cumque necessitatibus natus perferendis deserunt ab pariatur dolores, quos, doloremque explicabo incidunt. Expedita.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, consequuntur harum numquam, amet a placeat praesentium reprehenderit ea ducimus, magni recusandae! Doloremque cumque id fuga tempora quibusdam accusantium vitae dolore.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eos laborum ratione assumenda beatae sunt voluptatem soluta repudiandae aliquid omnis aperiam eum repellendus, repellat, numquam sequi optio? Excepturi, iure architecto?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam impedit cupiditate maxime veritatis, suscipit doloribus magnam adipisci et dolorem exercitationem in quam tenetur ea reiciendis, saepe voluptate facere minima cumque!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem assumenda tenetur asperiores. Non, voluptates
+        minus aliquid est cumque necessitatibus natus perferendis deserunt ab pariatur dolores, quos, doloremque
+        explicabo incidunt. Expedita.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, consequuntur harum numquam, amet a placeat
+        praesentium reprehenderit ea ducimus, magni recusandae! Doloremque cumque id fuga tempora quibusdam accusantium
+        vitae dolore.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eos laborum ratione assumenda beatae sunt
+        voluptatem soluta repudiandae aliquid omnis aperiam eum repellendus, repellat, numquam sequi optio? Excepturi,
+        iure architecto?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam impedit cupiditate maxime veritatis, suscipit
+        doloribus magnam adipisci et dolorem exercitationem in quam tenetur ea reiciendis, saepe voluptate facere minima
+        cumque!
       </p>
     </div>
     <div class="rates">
-      <div class="card add-pub">
-        <div role="textbox" placeholder="Tell us your oppinion" class="new-rate" name="new-rate" id="new-rate" contenteditable></div>
-        <div class="add-pub-footer">
-          <div class="overall">
-            <div class="title">Rate: </div>
-            <div class="rate">
-              <input name="rate" type="radio" class="star" value="5">
-              <input name="rate" type="radio" class="star" value="4">
-              <input name="rate" type="radio" class="star" value="3">
-              <input name="rate" type="radio" class="star" value="2">
-              <input name="rate" type="radio" class="star" value="1">
-            </div>
+      <app-add-pub-card (Submit)=onAddRate($event) [rate]=true></app-add-pub-card>
 
-          </div>
-          <button class="publish">
-            Subbmit
-          </button>
-        </div>
-
-      </div>
-      <div class="card pub">
-        <div class="rate">
-          <svg width="25px" class="up-vote" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
-            <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
-            c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
-            c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
-            c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
-          </svg>
-          <span class="num">-5002</span>
-          <svg width="25px" class="down-vote" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
-            <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
-            c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
-            c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
-            c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
-          </svg>
-        </div>
-        <div class="content">
-          <div class="upper-bond">
-            <span class="creator">Posted By <a class="link" routerLink="/home">Go To Post</a> </span>
-            <span class="date">2h ago</span>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque ea recusandae similique velit minima, nisi commodi alias fugiat itaque officiis ducimus exercitationem blanditiis dignissimos animi sed veniam ipsum in!
-          </p>
-        </div>
-      </div>
-      <div class="card pub">
-        <div class="rate">
-          <svg width="25px" class="up-vote" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
-            <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
-            c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
-            c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
-            c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
-          </svg>
-          <span class="num">-5002</span>
-          <svg width="25px" class="down-vote" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
-            <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
-            c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
-            c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
-            c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
-          </svg>
-        </div>
-        <div class="content">
-          <div class="upper-bond">
-            <span class="creator">Posted By <a class="link" routerLink="/home">Go To Post</a> </span>
-            <span class="date">2h ago</span>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque ea recusandae similique velit minima, nisi commodi alias fugiat itaque officiis ducimus exercitationem blanditiis dignissimos animi sed veniam ipsum in!
-          </p>
-        </div>
-      </div>
-      <div class="card pub">
-        <div class="rate">
-          <svg width="25px" class="up-vote" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
-            <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
-            c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
-            c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
-            c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
-          </svg>
-          <span class="num">-5002</span>
-          <svg width="25px" class="down-vote" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
-            <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
-            c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
-            c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
-            c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
-          </svg>
-        </div>
-        <div class="content">
-          <div class="upper-bond">
-            <span class="creator">Posted By <a class="link" routerLink="/home">Go To Post</a> </span>
-            <span class="date">2h ago</span>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque ea recusandae similique velit minima, nisi commodi alias fugiat itaque officiis ducimus exercitationem blanditiis dignissimos animi sed veniam ipsum in!
-          </p>
-        </div>
-      </div>
+      <app-pub-card [post]="post" *ngFor="let post of rates.posts"></app-pub-card>
     </div>
   </div>
 </div>
