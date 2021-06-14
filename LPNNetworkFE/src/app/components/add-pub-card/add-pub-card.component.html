@@ -1,7 +1,18 @@
 <div class="card add-pub">
-  <div (input)=(changed($event)) role="textbox" class="new-post" name="new-post" id="new-post" contenteditable>
+  <div (input)="(onChange($event,'text'))" role="textbox" class="new-post" name="new-post" id="new-post"
+    contenteditable>
   </div>
-  <div class="add-pub-footer">
+  <div [ngStyle]="{'justify-content':this.rate ? 'space-between' : 'flex-end' }" class="add-pub-footer">
+    <div *ngIf="this.rate" class="overall">
+      <div class="title">Rate: </div>
+      <div class="rate">
+        <input (input)="(onChange($event,'radio'))" name="rate" type="radio" class="star" value="5">
+        <input (input)="(onChange($event,'radio'))" name="rate" type="radio" class="star" value="4">
+        <input (input)="(onChange($event,'radio'))" name="rate" type="radio" class="star" value="3">
+        <input (input)="(onChange($event,'radio'))" name="rate" type="radio" class="star" value="2">
+        <input (input)="(onChange($event,'radio'))" name="rate" type="radio" class="star" value="1">
+      </div>
+    </div>
     <button (click)=(onSubmit()) class="publish">
       Submit
     </button>

@@ -25,7 +25,7 @@
     width: 100%;
     max-width: 25rem;
 
-    height: 25rem;
+    height: 20rem;
 
     padding: 1rem;
     margin: auto;
@@ -91,6 +91,7 @@
         border: #00a8e8 solid 1px;
       }
     }
+
     .btn-grp {
       display: flex;
       flex-direction: row;
@@ -114,15 +115,27 @@
         border-radius: 1.5rem;
         border: transparent solid 2px;
 
+        &[disabled] {
+          background-color: #00a8e844;
+          &:hover {
+            border: transparent solid 2px;
+            color: white;
+            background-color: #00a8e844;
+          }
+
+          &:active {
+            border: transparent solid 2px;
+            color: white;
+            background-color: #00a8e844;
+          }
+        }
+
         &:hover {
           border: black solid 2px;
           color: black;
           background-color: transparent;
         }
 
-        &:focus {
-          outline: none;
-        }
         &:active {
           border: black solid 2px;
           color: black;
@@ -166,5 +179,26 @@
   100% {
     transform: translate(0px);
     background-color: #c80000;
+  }
+}
+
+@keyframes error_shake_nobg {
+  0% {
+    transform: translate(20px);
+  }
+  20% {
+    transform: translate(-20px);
+  }
+  40% {
+    transform: translate(10px);
+  }
+  60% {
+    transform: translate(-10px);
+  }
+  80% {
+    transform: translate(5px);
+  }
+  100% {
+    transform: translate(0px);
   }
 }

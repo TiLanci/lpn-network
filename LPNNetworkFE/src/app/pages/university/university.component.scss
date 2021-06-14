@@ -1,6 +1,6 @@
-.wrapper{
+.wrapper {
   overflow: hidden;
-  .card{
+  .card {
     border-radius: 20px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     position: relative;
@@ -8,14 +8,14 @@
     padding: 10px;
   }
 
-  .header{
+  .header {
     width: 100vw;
     height: 40vh;
 
     background-image: url("../../../assets/img/Background.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size:cover;
+    background-size: cover;
 
     display: flex;
     flex-direction: column;
@@ -25,13 +25,13 @@
 
     padding: 15px 30px;
 
-    .description{
+    .description {
       display: flex;
       height: 100px;
-      img{
+      img {
         height: 100px;
       }
-      .content{
+      .content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -40,416 +40,203 @@
         margin-left: 10px;
         padding: 5px;
 
-        h1.title{
+        h1.title {
           color: white;
-          font-size: .8rem;
+          font-size: 0.8rem;
         }
-        .location{
+        .location {
           display: flex;
           align-items: flex-end;
-          img{
+          img {
             width: auto;
-            height: .95rem;
+            height: 0.95rem;
           }
-          h3.title{
-            font-size: .7rem;
+          h3.title {
+            font-size: 0.7rem;
             color: white;
             font-weight: 400;
             margin: 0;
-            margin-left: .25rem;
+            margin-left: 0.25rem;
           }
         }
       }
     }
 
-    .rating{
+    .rating {
       align-self: flex-end;
       margin-bottom: 10px;
-      .title{
+      .title {
         color: white;
         font-size: 1rem;
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
       }
-      .rate{
+      .rate {
         display: flex;
         align-items: center;
-        .num{
-          font-family: 'Montserrat';
+        .num {
+          font-family: "Montserrat";
           color: #ffbe55;
           font-size: 2rem;
         }
-        .stat{
-          width: 125px;
-          margin-left: 10px;
+        .stat {
+          width: 7.5rem;
+          margin-left: 0.5rem;
           display: flex;
           align-items: center;
-          .tag{
-            font-size: .5rem;
+          .tag {
+            font-size: 0.5rem;
             font-weight: bold;
             color: white;
           }
-          .bar{
-            margin: 2px 10px;
-            background-color: #00A8E8;
+          .bar-container {
+            margin: 0.125rem 0.5rem;
+            height: 0.5rem;
             width: 100%;
-            height: .5rem;
-            border-radius: .5rem;
+            .bar {
+              background-color: #00a8e8;
+              height: 100%;
+              border-radius: 0.5rem;
+              transition: all 1s ease-in-out;
+            }
           }
         }
       }
     }
-
   }
-  .footer{
+  .footer {
     display: flex;
 
     flex-direction: column;
 
-
     padding: 25px 20px;
 
-
-    .about{
+    .about {
       margin-bottom: 15px;
-      h1{
+      h1 {
         margin-bottom: 0.5rem;
       }
-      p{
-        font-size: .75rem;
-      }
-    }
-
-    .rates{
-
-      .add-pub{
-        margin: 5px;
-        overflow: unset;
-        .new-rate{
-          width: 100%;
-          min-height: 2rem;
-          max-height: 10rem;
-          font-size: 1rem;
-          position: relative;
-          border-radius: 1rem;
-          background-color: #F2F2F2;
-          color: #808080;
-          border: none;
-          padding: .5rem 1rem;
-          outline: none;
-          resize: vertical;
-          overflow: scroll;
-
-          &:empty::before{
-            content: "Express Yourself";
-            position: absolute;
-            color: #7A7A7A;
-          }
-
-        }
-
-        .add-pub-footer{
-          display: flex;
-          justify-content: space-between;
-          margin-top: 10px;
-          .overall{
-            display: flex;
-            align-items: center;
-            .title{
-              font-family: 'Montserrat';
-              margin: 0 5px;
-            }
-            .rate{
-              display: flex;
-              flex-direction: row-reverse;
-
-              .star{
-                appearance: unset;
-                width: 1rem;
-                height: 1rem;
-                margin: .1rem;
-                background: url("../../../assets/svg/star.svg");
-                background-size: 1rem 1rem;
-                appearance: unset;
-                outline: none;
-
-                &:checked{
-                  background: url("../../../assets/svg/star-3.svg");
-                  background-size: 1rem 1rem;
-                  ~:nth-child(n):nth-child(-n+5){
-                    background: url("../../../assets/svg/star-3.svg");
-                    background-size: 1rem 1rem;
-                    &:hover{
-                      background: url("../../../assets/svg/star-2.svg");
-                      background-size: 1rem 1rem;
-                      ~:nth-child(n):nth-child(-n+5){
-                        background: url("../../../assets/svg/star-2.svg");
-                        background-size: 1rem 1rem;
-                      }
-                    }
-                  }
-                }
-
-                &:hover{
-                  background: url("../../../assets/svg/star-1.svg");
-                  background-size: 1rem 1rem;
-                  &:checked{
-                    background: url("../../../assets/svg/star-2.svg");
-                    background-size: 1rem 1rem;
-                    ~:nth-child(n):nth-child(-n+5){
-                      background: url("../../../assets/svg/star-2.svg");
-                      background-size: 1rem 1rem;
-                    }
-                  }
-                  ~:nth-child(n):nth-child(-n+5){
-                    background: url("../../../assets/svg/star-1.svg");
-                    background-size: 1rem 1rem;
-                    &:checked{
-                      background: url("../../../assets/svg/star-2.svg");
-                      background-size: 1rem 1rem;
-                      ~:nth-child(n):nth-child(-n+5){
-                        background: url("../../../assets/svg/star-2.svg");
-                        background-size: 1rem 1rem;
-                      }
-                    }
-                  }
-                }
-
-
-              }
-
-            }
-          }
-          .publish{
-            background-color: #00A8E8;
-            color: white;
-            font-size: .75rem;
-            font-family: Montserrat;
-
-            padding: .25rem 1rem;
-            border-radius: 1rem;
-            border: transparent solid 2px;
-
-            &:hover {
-              border: black solid 2px;
-              color: black;
-              background-color: transparent;
-            }
-
-            &:focus {
-              outline: none;
-            }
-            &:active{
-              transform: translate(.5px,.25px);
-              border: black solid 2px;
-              color: black;
-              background-color: transparent;
-            }
-          }
-        }
-
-      }
-
-      .pub{
-        margin: 20px 5px;
-        display: flex;
-        .rate{
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          margin: 0px 5px;
-          color: #9E9E9E;
-          .up-vote{
-            transition: all .5s ease-in-out;
-            transform: rotate(-90deg);
-            fill: #9E9E9E;
-            &:hover{
-              fill: #00D100;
-            }
-            &.active{
-              fill: #00D100;
-            }
-          }
-          .num{
-            font-family: Montserrat;
-            color: #9E9E9E;
-          }
-          .down-vote{
-            transition: all .5s ease-in-out;
-            transform: rotate(90deg);
-            fill: #9E9E9E;
-            &:hover{
-              fill: #D10000;
-            }
-            &.active{
-              fill: #D10000;
-            }
-          }
-        }
-
-        .content{
-          margin: 0 10px;
-          .upper-bond{
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            .creator{
-              font-size: .75rem;
-              font-weight: bold;
-              line-height: 15px;
-            }
-            .date{
-              font-size: .6rem;
-              color: #9E9E9E;
-              right: 25px;
-              line-height: 15px;
-            }
-          }
-
-          .link{
-            font-size: .75rem;
-          }
-          .link:link {
-            color: #00A8E8;
-            text-decoration: none;
-            border-bottom: 1px solid;
-          }
-          .link:visited {
-              color: #0090ff;
-          }
-          .link:hover {
-              color: #00c6ff;
-              border-bottom: none;
-          }
-          .link:active {
-              color: #00A8E8;
-          }
-        }
+      p {
+        font-size: 0.75rem;
       }
     }
   }
 
-
-
-
-  @media screen and (min-width : 576px){
-    .header{
+  @media screen and (min-width: 576px) {
+    .header {
       height: 45vh;
       padding: 30px 60px;
-      .description{
+      .description {
         height: 125px;
-        img{
+        img {
           height: 125px;
         }
-        .content{
+        .content {
           width: calc(100% - 145px);
 
-          h1.title{
+          h1.title {
             font-size: 1.5rem;
           }
         }
       }
 
-      .rating{
-        .title{
+      .rating {
+        .title {
           font-size: 1rem;
         }
-        .rate{
-          .num{
+        .rate {
+          .num {
             font-size: 3rem;
           }
-          .stat{
+          .stat {
             width: 150px;
-            .tag{
-              font-size: .65rem;
+            .tag {
+              font-size: 0.65rem;
             }
-            .bar{
-              height: .65rem;
-              border-radius: .65rem;
+            .bar-container {
+              height: 0.65rem;
             }
           }
         }
       }
-
     }
-    .footer{
+    .footer {
       height: 55vh;
     }
   }
-  @media screen and (min-width : 992px){
+  @media screen and (min-width: 992px) {
     height: 100vh;
-    .header{
+    .header {
       flex-direction: row;
 
       justify-content: space-between;
       align-content: flex-end;
 
       padding: 30px 60px;
-      .description{
+      .description {
         height: 150px;
-        img{
+        img {
           height: 150px;
         }
-        .content{
+        .content {
           width: 350px;
 
-          h1.title{
+          h1.title {
             font-size: 1.75rem;
           }
-          .location{
-            img{
+          .location {
+            img {
               height: 1.5rem;
             }
-            h3.title{
+            h3.title {
               font-size: 1.25rem;
             }
           }
         }
       }
 
-      .rating{
-        .title{
+      .rating {
+        .title {
           font-size: 1.25rem;
         }
-        .rate{
-          .num{
+        .rate {
+          .num {
             font-size: 4rem;
           }
-          .stat{
-            width: 200px;
-            .tag{
-              font-size: .75rem;
+          .stat {
+            width: 12.5rem;
+            .tag {
+              width: 1rem;
+              font-size: 0.75rem;
             }
-            .bar{
-              height: .75rem;
-              border-radius: .75rem;
+            .bar-container {
+              height: 0.75rem;
+              border-radius: 0.75rem;
             }
           }
         }
       }
-
     }
-    .footer{
+    .footer {
       flex-direction: row;
       justify-content: space-between;
 
-      .about{
+      .about {
         width: 40%;
         padding: 10px;
         margin-bottom: 10px;
-        p{
-          font-size: .75rem;
+        p {
+          font-size: 0.75rem;
         }
       }
 
-      .rates{
+      .rates {
         width: 40%;
         padding: 10px;
         overflow-y: scroll;
-        .add-pub{
-          .add-pub-footer{
-            .publish{
-              padding: .5rem 2rem;
+        .add-pub {
+          .add-pub-footer {
+            .publish {
+              padding: 0.5rem 2rem;
               border-radius: 2rem;
             }
           }
@@ -458,4 +245,3 @@
     }
   }
 }
-

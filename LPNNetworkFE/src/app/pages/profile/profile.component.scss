@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
   display: grid;
 
   grid-template-columns: 1fr;
@@ -6,42 +6,42 @@
   gap: 1em;
   padding: 25px;
 
-  overflow:hidden;
+  overflow: hidden;
 
-  .card{
+  .card {
     border-radius: 20px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     position: relative;
     overflow: hidden;
     padding: 10px;
 
-    &.collapse{
-      &.active{
-        .header{
-          img{
+    &.collapse {
+      &.active {
+        .header {
+          img {
             transform: rotate(90deg);
-            &:hover{
+            &:hover {
               transform: rotate(0deg);
             }
           }
         }
-        .content{
+        .content {
           max-height: 1000px;
         }
       }
-      .header{
+      .header {
         display: flex;
         justify-content: space-between;
         padding: 10px;
-        img{
+        img {
           height: 1.5rem;
-          transition: all .3s ease-in-out;
-          &:hover{
+          transition: all 0.3s ease-in-out;
+          &:hover {
             transform: rotate(90deg);
           }
         }
       }
-      .content{
+      .content {
         transition: max-height 1.5s ease-in-out;
         overflow: hidden;
         max-height: 0;
@@ -49,13 +49,13 @@
     }
   }
 
-  #profile{
+  #profile {
     height: 350px;
     overflow: hidden;
     padding: 0;
-    .card-upper{
+    .card-upper {
       height: 30%;
-      background: linear-gradient(90deg, #00C6FF 0%, #0072FF 100%);
+      background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
       opacity: 0.6;
 
       display: flex;
@@ -64,15 +64,15 @@
 
       padding-right: 2.5%;
 
-      img{
+      img {
         height: 45px;
         margin-top: 5px;
       }
     }
-    .card-footer{
+    .card-footer {
       height: 70%;
 
-      img{
+      img {
         height: 100px;
         top: -60px;
         left: calc(50% - 50px);
@@ -85,158 +85,159 @@
       }
       // HERE ADD IMG ON HOVE BE BLACK
 
-      .card-content{
+      .card-content {
         width: 100%;
         text-align: center;
         margin-top: -65px;
         padding: 10px 15px;
-        .title{
+        .title {
           font-size: 1.5rem;
           margin-bottom: 5px;
         }
       }
 
-      .nums{
+      .nums {
         position: absolute;
         right: 5px;
         bottom: 5px;
         display: flex;
 
-        .num{
+        .num {
           display: flex;
           flex-direction: column;
           align-items: center;
           margin: 5px;
-          .value{
+          .value {
             font-family: Montserrat;
             font-size: 1.25rem;
           }
-          .tag{
-            font-size: .75rem;
+          .tag {
+            font-size: 0.75rem;
           }
         }
       }
     }
   }
 
-  #about{
-    .content{
-      div{
-        margin-bottom: .5rem;
+  #about {
+    .content {
+      div {
+        margin-bottom: 0.5rem;
       }
     }
   }
 
-  #favs{
-    .content{
+  #favs {
+    margin-bottom: 10px;
+    .content {
       display: flex;
       flex-wrap: wrap;
 
-      .tag{
-        background-color: #00A8E8;
+      .tag {
+        background-color: #00a8e8;
         padding: 5px 10px;
         margin: 5px 2.5px;
         border-radius: 20px;
         color: white;
         font-family: Montserrat;
-        font-size: .75rem;
+        font-size: 0.75rem;
       }
     }
   }
 
-  #pubs{
+  #pubs {
     padding: 10px;
     overflow-y: scroll;
-    .pub{
+    .pub {
       margin: 20px 5px;
       display: flex;
-      .rate{
+      .rate {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         margin: 0px 5px;
-        color: #9E9E9E;
-        .up-vote{
-          transition: all .5s ease-in-out;
+        color: #9e9e9e;
+        .up-vote {
+          transition: all 0.5s ease-in-out;
           transform: rotate(-90deg);
-          fill: #9E9E9E;
-          &:hover{
-            fill: #00D100;
+          fill: #9e9e9e;
+          &:hover {
+            fill: #00d100;
           }
-          &.active{
-            fill: #00D100;
+          &.active {
+            fill: #00d100;
           }
         }
-        .num{
+        .num {
           font-family: Montserrat;
-          color: #9E9E9E;
+          color: #9e9e9e;
         }
-        .down-vote{
-          transition: all .5s ease-in-out;
+        .down-vote {
+          transition: all 0.5s ease-in-out;
           transform: rotate(90deg);
-          fill: #9E9E9E;
-          &:hover{
-            fill: #D10000;
+          fill: #9e9e9e;
+          &:hover {
+            fill: #d10000;
           }
-          &.active{
-            fill: #D10000;
+          &.active {
+            fill: #d10000;
           }
         }
       }
 
-      .content{
+      .content {
         margin: 0 10px;
-        .upper-bond{
+        .upper-bond {
           display: flex;
           justify-content: space-between;
           margin-bottom: 5px;
-          .creator{
-            font-size: .75rem;
+          .creator {
+            font-size: 0.75rem;
             font-weight: bold;
             line-height: 15px;
           }
-          .date{
-            font-size: .6rem;
-            color: #9E9E9E;
+          .date {
+            font-size: 0.6rem;
+            color: #9e9e9e;
             right: 25px;
             line-height: 15px;
           }
         }
 
-        .link{
-          font-size: .75rem;
+        .link {
+          font-size: 0.75rem;
         }
         .link:link {
-          color: #00A8E8;
+          color: #00a8e8;
           text-decoration: none;
           border-bottom: 1px solid;
         }
         .link:visited {
-            color: #0090ff;
+          color: #0090ff;
         }
         .link:hover {
-            color: #00c6ff;
-            border-bottom: none;
+          color: #00c6ff;
+          border-bottom: none;
         }
         .link:active {
-            color: #00A8E8;
+          color: #00a8e8;
         }
       }
     }
   }
 
-  #search{
+  #search {
     display: none;
     .input-container {
       display: flex;
       width: 100%;
-      margin-bottom: 15px;
       border-radius: 2rem;
-      background: #F2F2F2;
+      background: #f2f2f2;
       border: none;
-      border: #9E9E9E solid 1px;
-      transition:all .5s ease;
+      border: #9e9e9e solid 1px;
+      transition: all 0.5s ease;
+      margin-bottom: 0.5rem;
       .icon {
         padding: 10px;
         background: transparent;
@@ -251,90 +252,96 @@
         border-radius: 2rem;
         border: none;
         background: transparent;
-
       }
 
-
-      &:focus-within{
-        border: #7A7A7A solid 1px;
+      &:focus-within {
+        border: #7a7a7a solid 1px;
       }
     }
-    .search-results{
-      .search-result{
+    .search-results {
+      display: flex;
+      overflow-y: scroll;
+      flex-direction: column;
+      height: 20.5rem;
+      padding-bottom: 0.5rem;
+      .search-result {
+        min-height: 5.5rem;
+        padding: 0.5rem;
+        margin: 0.5rem 0.75rem;
         display: flex;
         align-items: center;
-        background: #F2F2F2;
-        margin: 15px 0;
-        img{
-          border-radius: 10px;
-          width: 75px;
-          height: 75px;
+        background: #f2f2f2;
+        img {
+          border-radius: 1rem;
+          width: 4.5rem;
+          height: 4.5rem;
         }
-        .content{
+        .content {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
 
           margin-left: 10px;
-          padding: 5px;
-          height: 75px;
+          padding: 0.125rem;
+          height: 5rem;
 
-          span.title{
-            font-size: .75rem;
+          span.title {
+            font-size: 0.8rem;
+            line-height: 0.9rem;
             font-weight: bold;
           }
-          .location{
+          .location {
             display: flex;
-            align-items: flex-end;
-            svg{
-
-              path{
-                fill: #7A7A7A;
+            align-items: center;
+            height: 0.75rem;
+            svg {
+              path {
+                fill: #7a7a7a;
               }
 
               width: auto;
-              height: .75rem;
+              height: 0.75rem;
             }
-            h3.title{
-              font-size: .6rem;
-              color: #7A7A7A;
+            h3.title {
+              line-height: 1rem;
+              font-size: 0.6rem;
+              color: #7a7a7a;
               font-weight: 400;
               margin: 0;
-              margin-left: .25rem;
+              margin-left: 0.25rem;
             }
           }
         }
-
       }
     }
   }
 
-  #suggestions{
+  #suggestions {
     display: none;
-    .suggestions{
-      padding: 5px;
+    .suggestions {
+      padding: 0.5rem;
       overflow-x: scroll;
       display: flex;
 
-      .profile{
-        height: 180px;
-        min-width: 150px;
-        margin: 0 10px 10px 10px;
+      .profile {
+        height: 10rem;
+        min-width: 8rem;
+        margin: 0 10px 0.5rem 10px;
         overflow: hidden;
         padding: 0;
-        .card-upper{
+        .card-upper {
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: flex-end;
 
           height: 40%;
-          background: linear-gradient(90deg,  #00C6FF66 0%, #0072FF66 100%);
+          background: linear-gradient(90deg, #00c6ff66 0%, #0072ff66 100%);
 
-          img{
-            height: 70px;
-            width: 70px;
-            top: calc(100% - 50px);
+          img {
+            height: 4rem;
+            width: 4rem;
+            top: calc(100% - 2.5rem);
             border: 3px solid white;
             border-radius: 50%;
             position: relative;
@@ -343,87 +350,116 @@
             z-index: 1;
           }
         }
-        .card-footer{
+        .card-footer {
           height: 60%;
           padding-top: 25px;
           display: flex;
           flex-direction: column;
           align-items: center;
 
-          .card-content{
+          .card-content {
             width: 100%;
             text-align: center;
-            padding: 10px 15px;
-            .title{
+            padding: 0.5rem;
+            .title {
               font-size: 1rem;
-              margin:0 ;
+              margin: 0;
             }
           }
 
-          .profile-link{
+          button {
             position: relative;
 
-            background-color: #00A8E8;
-            color: white;
-            font-size: .6rem;
+            width: 5rem;
+            height: max-content;
+
+            font-size: 0.6rem;
+            line-height: 0.75rem;
             font-family: Montserrat;
 
-            padding: .15rem 1.5rem;
+            padding: 0.125rem 0;
             border-radius: 1.25rem;
-            border: transparent solid 2px;
 
             text-decoration: auto;
 
             margin: 5px;
 
-            &:hover {
+            &[disabled] {
+              background-color: #00a8e844;
+              &:hover {
+                border: transparent solid 2px;
+                color: white;
+                background-color: #00a8e844;
+              }
+
+              &:active {
+                border: transparent solid 2px;
+                color: white;
+                background-color: #00a8e844;
+              }
+            }
+            &.un-follow {
+              background-color: #00a8e8;
+              color: white;
+              border: transparent solid 2px;
+              &:hover,
+              &:active {
+                border: black solid 2px;
+                color: black;
+                background-color: transparent;
+              }
+            }
+            &.follow {
               border: black solid 2px;
               color: black;
               background-color: transparent;
+              &:hover,
+              &:active {
+                background-color: #00a8e8;
+                color: white;
+                border: transparent solid 2px;
+              }
             }
           }
         }
       }
     }
-
-
   }
 
-  @media screen and (min-width : 576px){
-
-    #profile{
+  @media screen and (min-width: 576px) {
+    #profile {
       height: 200px;
-      .card-upper{
+      .card-upper {
         align-items: center;
-        img{
+        img {
           height: 50px;
           margin-top: 0;
         }
       }
 
-      .card-footer{
+      .card-footer {
         display: flex;
 
-        img{
+        img {
           height: 125px;
           top: -50px;
           left: 25px;
         }
 
-        .card-content{
+        .card-content {
           width: 60%;
           margin-top: 0;
           margin-left: 25px;
           text-align: unset;
         }
-        .nums{
-          .num{
+        .nums {
+          .num {
             margin: 7.5px;
-            .value{
+            .value {
               font-size: 1rem;
             }
-            .tag{
-              font-size: .75rem;
+            .tag {
+              font-size: 0.75rem;
             }
           }
         }
@@ -431,84 +467,84 @@
     }
   }
 
-  @media screen and (min-width : 992px){
+  @media screen and (min-width: 992px) {
     height: 100vh;
 
-    grid-template-columns: 1fr 2fr minmax(200px,1fr) ;
-    grid-template-rows: 200px 1.75fr .5fr 1.25fr;
+    grid-template-columns: 1fr 2fr minmax(250px, 1fr);
+    grid-template-rows: 200px 1.75fr 0.5fr 1.25fr;
 
-    padding: 50px 75px 25px 75px;
+    padding: 5rem 5rem 0 5rem;
 
-    .card{
-      &.collapse{
-        .header{
-          img{
+    .card {
+      &.collapse {
+        .header {
+          img {
             display: none;
           }
         }
-        .content{
+        .content {
           max-height: none;
         }
       }
     }
 
-    #profile{
+    #profile {
       height: 200px;
       grid-column: 1/3;
       grid-row: 1;
 
-      .card-upper{
+      .card-upper {
         align-items: center;
-        img{
+        img {
           height: 50px;
           margin-top: 0;
         }
       }
 
-      .card-footer{
+      .card-footer {
         display: flex;
 
-        img{
+        img {
           height: 150px;
           top: -50px;
           left: 25px;
         }
 
-        .card-content{
+        .card-content {
           width: 60%;
           margin-top: 0;
           margin-left: 25px;
-          .title{
+          .title {
             font-size: 1.5rem;
-            margin-left: .5rem;
+            margin-left: 0.5rem;
           }
         }
       }
     }
 
-    #search{
+    #search {
       grid-column: 3;
-      grid-row: 1;
+      grid-row: 1/3;
 
       display: unset;
     }
 
-    #suggestions{
+    #suggestions {
       grid-column: 3;
       grid-row: 3/5;
       display: unset;
     }
 
-    #about{
+    #about {
       grid-column: 1;
       grid-row: 2/4;
     }
 
-    #favs{
+    #favs {
       grid-column: 1;
       grid-row: 4;
     }
-    #pubs{
+    #pubs {
       grid-column: 2;
       grid-row: 2/5;
       overflow-y: scroll;

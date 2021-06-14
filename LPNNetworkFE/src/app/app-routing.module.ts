@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: "sign-up", component: SignUpComponent},
   { path: "forum", component: ForumComponent},
   { path: "research", component: ResearchComponent},
-  { path: "university", component: UniversityComponent},
+  { path: "university/:id", component: UniversityComponent},
   { path: "entreprise", component: EnterpriseComponent},
   { path: "forum", component: ForumComponent},
   { path: "profile/:id", component: ProfileComponent},
